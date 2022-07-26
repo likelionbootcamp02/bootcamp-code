@@ -98,7 +98,7 @@ h3 {
   color: blue;
 } */
 
-* {
+/* * {
   color: blue;
 }
 
@@ -116,4 +116,43 @@ h1 {
 
 .heading-primary {
   color: yellow !important;
+} */
+/* 
+.active {
+  color: blue;
+} */
+
+/* .text {
+  color: red;
+}
+
+.active {
+  color: blue;
+} */
+
+/* .box .text {
+  color: red;
+}
+
+.text {
+  color: blue;
+} */
+
+/* 
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
 }
