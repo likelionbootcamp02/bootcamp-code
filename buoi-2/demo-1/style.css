@@ -1,0 +1,95 @@
+/* h1 {
+  color: rgb(34, 34, 34);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+
+p {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+div {
+  text-align: center;
+}
+
+h1 {
+  text-align: left;
+} */
+
+/* h2 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: capitalize;
+} */
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+/* div h3 {
+  color: red;
+} */
+
+.heading {
+  color: red;
+}
+
+#heading-secondary {
+  color: blue;
+}
+
+/* .text {
+  text-align: center;
+} */
+
+/* .text:first-child {
+  text-align: center;
+}
+
+.text:last-child {
+  text-align: center;
+}
+
+.text:nth-child(odd) {
+  text-align: center;
+}
+
+.text:nth-child(even) {
+  text-align: center;
+} */
+
+/* .text {
+  text-align: center;
+}
+
+.text:last-child {
+  text-align: left;
+} */
+
+.text:not(:last-child) {
+  text-align: center;
+}
