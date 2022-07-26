@@ -35,7 +35,7 @@ h3 {
   text-transform: capitalize;
 } */
 
-h2 {
+/* h2 {
   font-size: 30px;
 }
 
@@ -48,19 +48,19 @@ h3 {
   font-weight: 500;
   line-height: 1.2;
   text-transform: capitalize;
-}
+} */
 
 /* div h3 {
   color: red;
 } */
 
-.heading {
+/* .heading {
   color: red;
 }
 
 #heading-secondary {
   color: blue;
-}
+} */
 
 /* .text {
   text-align: center;
@@ -90,6 +90,30 @@ h3 {
   text-align: left;
 } */
 
-.text:not(:last-child) {
+/* .text:not(:last-child) {
   text-align: center;
+}
+
+.heading-primary:hover {
+  color: blue;
+} */
+
+* {
+  color: blue;
+}
+
+h1 {
+  color: red;
+}
+
+#heading-primary {
+  color: orange;
+}
+
+.heading-primary {
+  color: aqua;
+}
+
+.heading-primary {
+  color: yellow !important;
 }
