@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .wrapper {
+        width: 400px;
+        height: 400px;
+        background-color: green;
+      }
+
+      .wrapper:hover .box {
+        animation: moveToRight 2s 1s alternate 3 forwards;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+
+      @keyframes moveToRight {
+        0% {
+          transform: translateX(0);
+        }
+        33% {
+          transform: translateY(100%);
+        }
+
+        66% {
+          transform: translate(100%, 100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
