@@ -102,6 +102,6 @@
 
 // console.log(deptrai || nhieutien);
 
-const age = 18;
-const cond = !(age >= 18);
-console.log(cond);
+// const age = 18;
+// const cond = !(age >= 18);
+// console.log(cond);
