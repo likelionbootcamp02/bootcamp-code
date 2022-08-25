@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  background-color: #f3f5f6;
+  color: rgba(60, 60, 67, 0.85);
+}
+
+button {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  background-color: transparent;
+  color: inherit;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.container {
+  --container-padding-x: 1rem;
+  --container-padding-y: 2rem;
+  --container-margin-y: auto;
+  width: 100%;
+  padding: var(--container-padding-y) var(--container-padding-x);
+  margin: var(--container-margin-y) auto;
+}
+
+.accordion {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.accordion-item {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+}
+
+.accordion-item.active .accordion-icon {
+  background-color: #000;
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-collapse {
+  max-height: 500px;
+  transition: max-height 2s;
+}
+
+.accordion-number {
+  font-weight: 700;
+  font-size: 2em;
+  color: rgba(60, 60, 67, 0.5);
+}
+
+.accordion-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.accordion-icon {
+  padding: 0.5rem;
+  background-color: #f3f5f6;
+  border-radius: 50%;
+  line-height: 1;
+  transition: transform 0.3s;
+}
+
+.accordion-icon [name="add-outline"] {
+  font-size: 0.875em;
+  --ionicon-stroke-width: 64px;
+}
+
+.accordion-collapse,
+.content {
+  max-height: 0;
+  overflow: hidden;
+  /* transition: max-height 0.25s; */
+}
+
+.active {
+  max-height: 300px;
+}
+
+/* QUERY */
+@media (min-width: 50em) {
+  .container {
+    --container-padding-x: 1.5rem;
+    --container-padding-y: 3rem;
+    --container-content-width: 720px;
+    max-width: calc(
+      var(--container-content-width) + var(--container-padding-x) * 2
+    );
+  }
+
+  .accordion {
+    font-size: 1.25rem;
+  }
+
+  .accordion-item {
+    padding: 2rem 3rem;
+  }
+}
+
+@media (min-width: 71.25em) {
+  .container {
+    --container-padding-x: 2rem;
+    --container-padding-y: 4rem;
+    --container-content-width: 1180px;
+  }
+
+  .accordion {
+    font-size: 1.5rem;
+  }
+  .accordion-item {
+    padding: 3rem 4rem;
+  }
+}
