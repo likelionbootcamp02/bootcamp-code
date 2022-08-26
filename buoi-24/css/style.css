@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+:root {
+  --gutter: 1.5rem;
+}
+
 *,
 *::before,
 *::after {
@@ -32,7 +36,6 @@ button {
   color: inherit;
   border: 0;
   outline: 0;
-  text-align: left;
   cursor: pointer;
 }
 
@@ -43,19 +46,29 @@ h2 {
 }
 
 .container {
-  --container-padding-x: 1rem;
-  --container-padding-y: 2rem;
+  --container-padding-x: calc(var(--gutter) / 2);
   --container-margin-y: auto;
+  --container-margin-x: auto;
   width: 100%;
   padding: var(--container-padding-y) var(--container-padding-x);
-  margin: var(--container-margin-y) auto;
+  margin: var(--container-margin-y) var(--container-margin-x);
 }
 
 .accordion {
+  /* Variables */
+  --accordion-padding-x: 1rem;
+  --accordion-padding-y: 2rem;
+  --accordion-color: var(--body-color);
+  --accordion-bg: var(--body-bg);
+  --accordion-body-padding-y: var(--accordion-padding-y);
+  --accordion-body-padding-x: var(--accordion-padding-x);
+
   font-size: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  color: var(--accordion-color);
+  background-color: var(--accordion-bg);
 }
 
 .accordion-item {
