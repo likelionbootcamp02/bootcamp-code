@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.breadcrumb {
+  --breadcrumb-font-size: 1rem;
+  --breadcrumb-padding-y: 0;
+  --breadcrumb-padding-x: 0;
+  --breadcrumb-item-padding-x: 0.5rem;
+  --breadcrumb-margin-bottom: 1rem;
+  --breadcrumb-bg: none;
+  --breadcrumb-divider-color: #6c757d;
+  --breadcrumb-active-color: #6c757d;
+  --breadcrumb-divider: "/";
+  --breadcrumb-border-radius: none;
+
+  font-size: var(--breadcrumb-font-size);
+  padding: var(--breadcrumb-padding-y) var(--breadcrumb-padding-x);
+  margin-bottom: var(--breadcrumb-margin-bottom);
+  background: var(--breadcrumb-bg);
+  border-radius: var(--breadcrumb-border-radius);
+}
+
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item.active {
+  color: var(--breadcrumb-active-color);
+}
+
+.breadcrumb-item:not(.active)::after {
+  content: var(--breadcrumb-divider);
+  display: inline-block;
+  padding: 0 var(--breadcrumb-item-padding-x);
+  color: var(--breadcrumb-divider-color);
+}
