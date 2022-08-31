@@ -19,6 +19,16 @@ const Collapse = {
         }
       });
     }
+    
+    window.addEventListener("click", function (e) {
+      const collapse = e.target.closest(".collapse");
+      if (
+        collapse &&
+        parseInt(collapse.style.height) !== collapse.children[0].offsetHeight
+      ) {
+        collapse.style.height = `${collapse.children[0].offsetHeight}px`;
+      }
+    });
   },
 };
 

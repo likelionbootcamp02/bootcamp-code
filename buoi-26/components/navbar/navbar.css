@@ -1,0 +1,51 @@
+@import url("../dropdown/dropdown.css");
+@import url("../collapse/collapse.css");
+
+body {
+  background-color: #fff;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  display: inline-block;
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container-fluid {
+  max-width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.navbar {
+  padding: 1rem 0;
+  background-color: #f8f9fa;
+}
+
+.navbar > .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+}
+
+.navbar-nav .nav-item .nav-link {
+  padding: 0.5rem 0;
+}
+
+.navbar-nav .dropdown-menu {
+  position: static;
+}
