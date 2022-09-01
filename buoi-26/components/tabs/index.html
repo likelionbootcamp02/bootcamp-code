@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./tabs.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="nav nav-pills" id="pills-tab">
+      <li class="nav-item">
+        <button
+          class="nav-link active"
+          id="pills-home-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-home"
+          type="button"
+        >
+          Home
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          id="pills-profile-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-profile"
+          type="button"
+        >
+          Profile
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          id="pills-contact-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-contact"
+          type="button"
+        >
+          Contact
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home">
+        This is some placeholder content the Home tab's associated content.
+        Clicking another tab will toggle the visibility of this one for the
+        next.
+      </div>
+      <div class="tab-pane fade" id="pills-profile">
+        This is some placeholder content the Home tab's associated content.
+        Clicking another tab will toggle the visibility of this one for the
+        next. The tab JavaScript swaps classes to control the content visibility
+        and styling. You can use it with tabs, pills, and any other .nav-powered
+        navigation. The tab JavaScript swaps classes to control the content
+        visibility and styling. You can use it with tabs, pills, and any other
+        .nav-powered navigation.
+      </div>
+      <div class="tab-pane fade" id="pills-contact">
+        This is some placeholder content the Home tab's associated content.
+        Clicking another tab will toggle the visibility of this one for the
+        next. The tab JavaScript swaps classes to control the content visibility
+        and styling. You can use it with tabs, pills, and any other .nav-powered
+        navigation.
+      </div>
+    </div>
+
+    <script src="./tabs.js"></script>
+  </body>
+</html>

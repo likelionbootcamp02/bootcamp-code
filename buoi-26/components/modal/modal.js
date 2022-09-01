@@ -1,13 +1,21 @@
-const Modal = {
+const Popup = {
+  createName: function (name) {
+    this.name = name;
+  },
   createBackdrop: function () {
     const modalBackdrop = document.createElement("div");
     modalBackdrop.classList.add("modal-backdrop", "fade", "show");
     this.modalBackdrop = modalBackdrop;
   },
   triggerModal: function () {
-    const modalBtnList = document.querySelectorAll("[data-bs-toggle='modal']");
+    const modalBtnList = document.querySelectorAll(
+      `[data-bs-toggle=${this.name}]`
+    );
     for (let modalBtn of modalBtnList) {
-      const targetSelector = modalBtn.getAttribute("data-bs-target");
+      let targetSelector = modalBtn.getAttribute("data-bs-target");
+      if (!targetSelector) {
+        targetSelector = modalBtn.getAttribute("href");
+      }
       const target = document.querySelector(targetSelector);
 
       const _this = this;
@@ -20,11 +28,13 @@ const Modal = {
   },
 
   closeModalByButton: function () {
-    const closeBtnList = document.querySelectorAll("[data-bs-dismiss='modal']");
+    const closeBtnList = document.querySelectorAll(
+      `[data-bs-dismiss=${this.name}]`
+    );
     const _this = this;
 
     for (let closeBtn of closeBtnList) {
-      const target = closeBtn.closest(".modal");
+      const target = closeBtn.closest(`.${this.name}`);
 
       closeBtn.addEventListener("click", function () {
         _this.closeModal(target);
@@ -36,19 +46,29 @@ const Modal = {
     const _this = this;
 
     window.addEventListener("click", function (e) {
-      if (e.target.matches(".modal.show")) {
+      if (
+        e.target.matches(".modal.show") ||
+        e.target.matches(".modal-backdrop.show")
+      ) {
         _this.closeModal(e.target);
       }
     });
   },
 
   closeModal: function (element) {
-    element.classList.remove("show");
+    if (!element.matches(".modal-backdrop.show")) {
+      element.classList.remove("show");
+    } else {
+      const offcanvasList = document.querySelectorAll(".offcanvas");
+      for (let canvas of offcanvasList) {
+        canvas.classList.remove("show");
+      }
+    }
     document.body.removeChild(this.modalBackdrop);
   },
 };
-
-Modal.createBackdrop();
-Modal.triggerModal();
-Modal.closeModalByButton();
-Modal.clickOutside();
+Popup.createName("modal");
+Popup.createBackdrop();
+Popup.triggerModal();
+Popup.closeModalByButton();
+Popup.clickOutside();
