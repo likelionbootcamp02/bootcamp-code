@@ -1,0 +1,33 @@
+@mixin center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin set-pseudo {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+@mixin square-box($size: 100px, $bg-color: blue) {
+  width: $size;
+  height: $size;
+  background-color: $bg-color;
+}
+
+@mixin border-top-radius($border) {
+  border-top-left-radius: $border;
+  border-top-right-radius: $border;
+}
+
+@mixin border-left-radius($border) {
+  border-top-left-radius: $border;
+  border-bottom-left-radius: $border;
+}
+
+@mixin media-breakpoint-down($md: 900px) {
+  @media (max-width: $md) {
+    @content;
+  }
+}

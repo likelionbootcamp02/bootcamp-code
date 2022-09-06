@@ -1,0 +1,122 @@
+// Header
+.navbar-nav {
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-left: 0.5rem;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      padding: 1rem;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      font-style: italic;
+    }
+  }
+}
+
+// Card
+
+.card {
+  width: 300px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0);
+  @include border-left-radius(2rem);
+  overflow: hidden;
+
+  @include media-breakpoint-down {
+    width: 500px;
+  }
+
+  &-img-top {
+    display: block;
+    width: 100%;
+    transition: 0.3s all;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-body {
+    padding: 1rem;
+  }
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  &-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+}
+
+// Box
+.parent {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: #ccc;
+}
+
+.parent::after {
+  @include set-pseudo;
+  @include square-box(200px);
+  top: 0;
+  left: 50%;
+  transform: translateY(-50%);
+}
+
+// .child {
+//   height: 100px;
+//   width: 100px;
+//   background-color: orange;
+// }
+
+// Base button
+.btn {
+  display: inline-block;
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  outline: none;
+
+  // Primary button
+  &-primary {
+    @extend .btn;
+    color: #fff;
+    // background-color: #0d6efd;
+    background-color: rgba(#0d6efd, 0.5);
+
+    &:hover {
+      background-color: darken(#0d6efd, 10%);
+    }
+  }
+
+  // Secondary button
+  &-secondary {
+    @extend .btn;
+    color: #fff;
+    background-color: #6c757d;
+  }
+
+  // Outline button
+  &-outline {
+    @extend .btn;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    background-color: #fff;
+  }
+}
