@@ -57,15 +57,50 @@
 // Execution phase
 // Global:  a: f() {...}
 
-
-
 // var x = 10;
 
-function a() {
-  var x = 20;
-  console.log(x); // 20
-  x = 30;
-}
+// function a() {
+//   var y = 20;
 
-a();
-console.log(x); // 10
+//   for (var i = 0; i < 10; i++) {
+//     console.log("Hello");
+//   }
+
+//   console.log(i);
+// }
+
+// a();
+// console.log(i);
+
+// console.log(x);
+
+// console.log(y);
+// let x = 10;
+// console.log(x);
+// console.log(z);
+
+// var y = 20;
+
+// const x = 10;
+// let y = x;
+// x = 20;
+
+// console.log(x); // 20
+// console.log(y); // 10
+
+const me = {
+  name: "Huy",
+  age: 25,
+};
+
+const you = JSON.parse(JSON.stringify(me)); // me copy
+
+me.name = "Tam";
+
+console.log(me);
+console.log(you);
+
+// me
+// {name: "Tam", age: 25}
+// you
+// {name: "Huy", age: 25}
