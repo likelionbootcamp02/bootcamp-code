@@ -1,0 +1,35 @@
+.navbar {
+  background-color: burlywood;
+  color: #fff;
+}
+
+.navbar .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #e8e0d7;
+}
