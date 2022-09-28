@@ -33,6 +33,14 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, architecto?",
   },
+  {
+    id: 5,
+    imageUrl:
+      "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-green-select?wid=940&hei=1112&fmt=png-alpha&.v=1645036275538",
+    title: "Iphone 13",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, architecto?",
+  },
 ];
 
 function ProductCard(props) {
