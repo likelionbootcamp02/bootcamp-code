@@ -1,7 +1,34 @@
+const navLinks = [
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Careers",
+    path: "/careers",
+  },
+  {
+    name: "History",
+    path: "/history",
+  },
+  {
+    name: "Services",
+    path: "/services",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+  },
+];
+
 const NavbarLogo = () => {
   return (
     <svg
-      className="h-8"
+      className="h-8 w-8"
       viewBox="0 0 28 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +47,8 @@ const MenuIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1}
+      strokeWidth={1.5}
       stroke="currentColor"
-      className="w-5 h-5"
     >
       <path
         strokeLinecap="round"
@@ -38,53 +64,32 @@ const Navbar = () => {
     <header>
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <a href="" className="text-[#0d9488]">
+        <a href="" className="text-primary">
           <NavbarLogo />
         </a>
 
         {/* Nav links */}
         <ul className="hidden items-center gap-6 md:flex">
-          <li>
-            <a href="" className="text-sm text-[#6b7280] hover:text-black">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-sm text-[#6b7280]">
-              Careers
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-sm text-[#6b7280]">
-              History
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-sm text-[#6b7280]">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-sm text-[#6b7280]">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-sm text-[#6b7280]">
-              Blog
-            </a>
-          </li>
+          {navLinks.map((item) => {
+            return (
+              <li key={item.path}>
+                <a href={item.path} className="text-sm text-[#6b7280]">
+                  {item.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Auth and Menu */}
         <div className="flex items-center gap-4">
-          <button className="py-[10px] px-5 bg-[#0d9488] text-white rounded-md text-sm font-medium">
+          <button className="py-[10px] px-5 bg-primary text-white rounded-md text-sm font-medium">
             Login
           </button>
-          <button className="hidden px-5 py-[10px] bg-[#f3f4f6] rounded-md font-medium text-[#0d9488] text-sm sm:block">
+          <button className="hidden px-5 py-[10px] bg-light-gray rounded-md font-medium text-primary text-sm sm:block">
             Register
           </button>
-          <button className="p-2 bg-[#f3f4f6] rounded md:hidden">
+          <button className="p-2 bg-light-gray text-[#4b5563] rounded md:hidden">
             <MenuIcon />
           </button>
         </div>

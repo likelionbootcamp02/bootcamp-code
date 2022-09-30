@@ -7,7 +7,7 @@ const NavbarSample = () => {
             <a className="block text-teal-600" href="/">
               <span className="sr-only">Home</span>
               <svg
-                className="h-8"
+                className="h-8 w-8"
                 viewBox="0 0 28 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
