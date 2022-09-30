@@ -1,22 +1,24 @@
-import { useState } from "react";
+const Counter = ({ cart, carts, setCarts }) => {
+  // Update carts
+  function updateCarts(id, increase = true) {
+    const newCarts = carts.map((item) => {
+      if (item.id === id) {
+        if (increase) {
+          return { ...item, quantity: cart.quantity + 1 };
+        }
+        return { ...item, quantity: cart.quantity - 1 };
+      }
+      return item;
+    });
 
-const Counter = (props) => {
-  const [counter, setCounter] = useState(0);
-
-  //   let counter = 0;
-  function increaseHandler() {
-    setCounter(counter + props.n);
-  }
-
-  function decreaseHandler() {
-    setCounter(counter - props.n);
+    setCarts(newCarts);
   }
 
   return (
     <div>
-      <button onClick={decreaseHandler}>-</button>
-      <span className="counter">{counter}</span>
-      <button onClick={increaseHandler}>+</button>
+      <button onClick={() => updateCarts(cart.id, false)}>-</button>
+      <span className="counter">{cart.quantity}</span>
+      <button onClick={() => updateCarts(cart.id)}>+</button>
     </div>
   );
 };
