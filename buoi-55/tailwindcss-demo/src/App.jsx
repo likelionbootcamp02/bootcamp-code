@@ -1,12 +1,13 @@
 import Navbar from "./components/Navbar";
-import NavbarSample from "./components/NavbarSample";
+import ProductCollectionList from "./components/ProductionCollectionList/ProductCollectionList";
 
 const App = () => {
   return (
-    <div>
-      <NavbarSample />
-      <hr className="border border-b-black" />
+    <div className="h-[200vh]">
       <Navbar />
+      <main>
+        <ProductCollectionList />
+      </main>
     </div>
   );
 };

@@ -62,37 +62,42 @@ const MenuIcon = () => {
 const Navbar = () => {
   return (
     <header>
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <a href="" className="text-primary">
-          <NavbarLogo />
-        </a>
+      <div className="container sm:px-6 lg:px-8">
+        <nav className="flex justify-between items-center">
+          {/* Logo */}
+          <a href="" className="text-primary">
+            <NavbarLogo />
+          </a>
 
-        {/* Nav links */}
-        <ul className="hidden items-center gap-6 md:flex">
-          {navLinks.map((item) => {
-            return (
-              <li key={item.path}>
-                <a href={item.path} className="text-sm text-[#6b7280]">
-                  {item.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+          {/* Nav links */}
+          <ul className="hidden items-center gap-6 md:flex">
+            {navLinks.map((item) => {
+              return (
+                <li key={item.path}>
+                  <a
+                    href={item.path}
+                    className="text-sm text-[#6b7280] hover:opacity-75 transition"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
 
-        {/* Auth and Menu */}
-        <div className="flex items-center gap-4">
-          <button className="py-[10px] px-5 bg-primary text-white rounded-md text-sm font-medium">
-            Login
-          </button>
-          <button className="hidden px-5 py-[10px] bg-light-gray rounded-md font-medium text-primary text-sm sm:block">
-            Register
-          </button>
-          <button className="p-2 bg-light-gray text-[#4b5563] rounded md:hidden">
-            <MenuIcon />
-          </button>
-        </div>
+          {/* Auth and Menu */}
+          <div className="flex items-center gap-4">
+            <button className="py-[10px] px-5 bg-primary text-white rounded-md text-sm font-medium">
+              Login
+            </button>
+            <button className="hidden px-5 py-[10px] bg-light-gray rounded-md font-medium text-primary text-sm sm:block">
+              Register
+            </button>
+            <button className="p-2 bg-light-gray text-[#4b5563] rounded md:hidden hover:opacity-75">
+              <MenuIcon />
+            </button>
+          </div>
+        </nav>
       </div>
     </header>
   );
