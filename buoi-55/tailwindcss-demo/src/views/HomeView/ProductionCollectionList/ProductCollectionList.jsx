@@ -55,7 +55,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "shoes",
     },
     {
       id: 6,
@@ -66,7 +66,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "shoes",
     },
     {
       id: 7,
@@ -77,7 +77,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "shoes",
     },
     {
       id: 8,
@@ -88,7 +88,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "shoes",
     },
     {
       id: 9,
@@ -99,7 +99,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "pants",
     },
     {
       id: 10,
@@ -110,7 +110,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "pants",
     },
     {
       id: 11,
@@ -121,7 +121,7 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "pants",
     },
     {
       id: 12,
@@ -132,13 +132,13 @@ const data = {
       description: "",
       colors: ["blue", "red", "green", "gray", "white"],
       status: "NEW",
-      category: "trainers",
+      category: "pants",
     },
   ],
   greeting: "hello",
 };
 
-const categories = ["trainers"];
+const categories = ["trainers", "shoes", "pants"];
 
 const ProductCollectionList = () => {
   return (

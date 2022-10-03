@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const navLinks = [
   {
     name: "About",
@@ -12,12 +14,12 @@ const navLinks = [
     path: "/history",
   },
   {
-    name: "Services",
-    path: "/services",
+    name: "Carts",
+    path: "/carts",
   },
   {
-    name: "Projects",
-    path: "/projects",
+    name: "Checkout",
+    path: "/checkout",
   },
   {
     name: "Blog",
@@ -28,7 +30,7 @@ const navLinks = [
 const NavbarLogo = () => {
   return (
     <svg
-      className="h-8 w-8"
+      className="h-8"
       viewBox="0 0 28 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +51,7 @@ const MenuIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
+      className="icon"
     >
       <path
         strokeLinecap="round"
@@ -65,21 +68,21 @@ const Navbar = () => {
       <div className="container sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <a href="" className="text-primary">
+          <Link to="/" className="text-primary">
             <NavbarLogo />
-          </a>
+          </Link>
 
           {/* Nav links */}
           <ul className="hidden items-center gap-6 md:flex">
             {navLinks.map((item) => {
               return (
                 <li key={item.path}>
-                  <a
-                    href={item.path}
+                  <Link
+                    to={item.path}
                     className="text-sm text-[#6b7280] hover:opacity-75 transition"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               );
             })}

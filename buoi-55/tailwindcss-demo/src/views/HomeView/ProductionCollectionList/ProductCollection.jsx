@@ -1,22 +1,32 @@
+import { Link } from "react-router-dom";
+
 const ProductCard = ({ name, imageUrl, price, colors, status }) => {
   return (
     <div>
-      {/* Header */}
-      <div className="relative">
-        <img src={imageUrl} alt="" className="h-96 w-full pt-3 object-cover" />
-        <span className="absolute top-0 left-1/2 px-4 bg-black text-white uppercase text-xs font-bold leading-6 -translate-x-1/2">
-          {status}
-        </span>
-      </div>
-
-      {/* Body */}
-      <div className="pt-4">
-        <h5 className="text-sm capitalize mb-4">{name}</h5>
-        <div className="flex justify-between items-center">
-          <p className="text-lg font-bold">${price}</p>
-          <p className="text-xs font-bold uppercase">{colors.length} colors</p>
+      <Link to="/products/1">
+        {/* Header */}
+        <div className="relative">
+          <img
+            src={imageUrl}
+            alt=""
+            className="h-96 w-full pt-3 object-cover"
+          />
+          <span className="absolute top-0 left-1/2 px-4 bg-black text-white uppercase text-xs font-bold leading-6 -translate-x-1/2">
+            {status}
+          </span>
         </div>
-      </div>
+
+        {/* Body */}
+        <div className="pt-4">
+          <h5 className="text-sm capitalize mb-4">{name}</h5>
+          <div className="flex justify-between items-center">
+            <p className="text-lg font-bold">${price}</p>
+            <p className="text-xs font-bold uppercase">
+              {colors.length} colors
+            </p>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };
