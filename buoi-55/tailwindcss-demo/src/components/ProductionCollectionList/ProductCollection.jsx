@@ -1,11 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination } from "swiper";
-
 const ProductCard = ({ name, imageUrl, price, colors, status }) => {
   return (
     <div>
@@ -47,29 +39,11 @@ const ProductCollection = ({ category, products }) => {
         </div>
 
         {/* Product Grid */}
-        {/* <div className="grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4"> */}
-        <Swiper
-          slidesPerView={2}
-          spaceBetween={16}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          breakpoints={{
-            1280: {
-              slidesPerView: 4,
-            },
-          }}
-        >
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4">
           {products.map((product) => {
-            return (
-              <SwiperSlide key={product.id}>
-                <ProductCard {...product} />
-              </SwiperSlide>
-            );
+            return <ProductCard {...product} key={product.id} />;
           })}
-        </Swiper>
-        {/* </div> */}
+        </div>
       </div>
     </div>
   );
