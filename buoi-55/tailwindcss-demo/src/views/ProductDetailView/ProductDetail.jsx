@@ -1,4 +1,4 @@
-const ProductDetail = () => {
+const ProductDetail = ({ product }) => {
   return (
     <section>
       <div className="relative mx-auto max-w-screen-xl px-4 py-8">
@@ -6,28 +6,28 @@ const ProductDetail = () => {
           <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
             <img
               alt="Les Paul"
-              src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              src={product.imageUrl}
               className="aspect-square w-full rounded-xl object-cover"
             />
             <div className="grid grid-cols-2 gap-4 lg:mt-4">
               <img
                 alt="Les Paul"
-                src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src={product.imageUrl}
                 className="aspect-square w-full rounded-xl object-cover"
               />
               <img
                 alt="Les Paul"
-                src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src={product.imageUrl}
                 className="aspect-square w-full rounded-xl object-cover"
               />
               <img
                 alt="Les Paul"
-                src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src={product.imageUrl}
                 className="aspect-square w-full rounded-xl object-cover"
               />
               <img
                 alt="Les Paul"
-                src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src={product.imageUrl}
                 className="aspect-square w-full rounded-xl object-cover"
               />
             </div>
@@ -38,8 +38,8 @@ const ProductDetail = () => {
             </strong>
             <div className="mt-8 flex justify-between">
               <div className="max-w-[35ch]">
-                <h1 className="text-2xl font-bold">
-                  Fun Product That Does Something Cool
+                <h1 className="text-2xl font-bold capitalize">
+                  {product.name}
                 </h1>
                 <p className="mt-0.5 text-sm">Highest Rated Product</p>
                 <div className="mt-2 -ml-0.5 flex">
@@ -123,39 +123,25 @@ const ProductDetail = () => {
                 <legend className="mb-1 text-sm font-medium">Color</legend>
                 <div className="flow-root">
                   <div className="-m-0.5 flex flex-wrap">
-                    <label htmlFor="color_tt" className="cursor-pointer p-0.5">
-                      <input
-                        type="radio"
-                        name="color"
-                        id="color_tt"
-                        className="peer sr-only"
-                      />
-                      <span className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                        Texas Tea
-                      </span>
-                    </label>
-                    <label htmlFor="color_fr" className="cursor-pointer p-0.5">
-                      <input
-                        type="radio"
-                        name="color"
-                        id="color_fr"
-                        className="peer sr-only"
-                      />
-                      <span className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                        Fiesta Red
-                      </span>
-                    </label>
-                    <label htmlFor="color_cb" className="cursor-pointer p-0.5">
-                      <input
-                        type="radio"
-                        name="color"
-                        id="color_cb"
-                        className="peer sr-only"
-                      />
-                      <span className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                        Cobalt Blue
-                      </span>
-                    </label>
+                    {product.colors?.map((color) => {
+                      return (
+                        <label
+                          key={color}
+                          htmlFor={`color_${color}`}
+                          className="cursor-pointer p-0.5"
+                        >
+                          <input
+                            type="radio"
+                            name="color"
+                            id={`color_${color}`}
+                            className="peer sr-only"
+                          />
+                          <span className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-black peer-checked:text-white">
+                            {color}
+                          </span>
+                        </label>
+                      );
+                    })}
                   </div>
                 </div>
               </fieldset>
