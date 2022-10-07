@@ -1,4 +1,6 @@
 const express = require("express");
+const fs = require("fs");
+
 const app = express();
 const port = 3000;
 
@@ -592,29 +594,47 @@ app.get("/", (req, res) => {
 });
 
 app.get("/products", (req, res) => {
+  // Read data in database
+  const rawdata = fs.readFileSync("db.json");
+  const data = JSON.parse(rawdata);
+
+  // Send response to client
   res.json({
     products: data.products,
     total: 100,
     skip: 0,
-    limit: 30,
+    limit: data.products.length,
   });
 });
 
 app.post("/products", (req, res) => {
+  // Read data in database
+  const rawdata = fs.readFileSync("db.json");
+  const data = JSON.parse(rawdata);
+
+  // Get new product from client's request
   const newProduct = {
     id: data.products.length + 1,
-    title: req.body.title,
-    price: req.body.price,
+    ...req.body,
   };
-
   data.products.push(newProduct);
 
+  // Write to database
+  let stringData = JSON.stringify(data, null, 4);
+  fs.writeFileSync("db.json", stringData);
+
+  // Send response to client
   res.json({
     product: newProduct,
   });
 });
 
 app.get("/products/:productId", (req, res) => {
+  // Read data in database
+  const rawdata = fs.readFileSync("db.json");
+  const data = JSON.parse(rawdata);
+
+  // Get product by id
   const product = data.products.find(
     (product) => product.id === parseInt(req.params.productId)
   );
@@ -625,12 +645,17 @@ app.get("/products/:productId", (req, res) => {
     });
   }
 
+  // Send response to client
   res.json({
     product: product,
   });
 });
 
 app.put("/products/:productId", (req, res) => {
+  // Read data in database
+  const rawdata = fs.readFileSync("db.json");
+  const data = JSON.parse(rawdata);
+
   // Find index
   const idx = data.products.findIndex(
     (product) => product.id == req.params.productId
@@ -639,15 +664,28 @@ app.put("/products/:productId", (req, res) => {
   // Update product at index
   data.products[idx] = { ...data.products[idx], ...req.body };
 
+  // Write to database
+  let stringData = JSON.stringify(data, null, 4);
+  fs.writeFileSync("db.json", stringData);
+
   // Send repsonse to client
   res.json({ product: data.products[idx] });
 });
 
 app.delete("/products/:productId", (req, res) => {
+  // Read data in database
+  const rawdata = fs.readFileSync("db.json");
+  const data = JSON.parse(rawdata);
+
+  // Remove product by id
   const filteredProducts = data.products.filter(
     (product) => product.id != req.params.productId
   );
   data.products = filteredProducts;
+
+  // Write to database
+  let stringData = JSON.stringify(data, null, 4);
+  fs.writeFileSync("db.json", stringData);
 
   res.json({ message: "Delete succesfully" });
 });
