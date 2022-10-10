@@ -1,6 +1,7 @@
 // ES5
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const status = require("http-status");
 
@@ -15,6 +16,7 @@ const PORT = 3000;
 const app = express();
 
 // Middlewares
+app.use(cors());
 app.use(express.json());
 
 // GET

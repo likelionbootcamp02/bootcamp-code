@@ -9,19 +9,28 @@ import ProductsView from "./views/ProductsView";
 
 // Tailwindcss base
 import "./index.css";
+import BaseLayout from "./layouts/BaseLayout";
+import ErrorView from "./views/ErrorView";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeView />,
-  },
-  {
-    path: "/products",
-    element: <ProductsView />,
-  },
-  {
-    path: "/products/:productId",
-    element: <ProductDetailView />,
+    element: <BaseLayout />,
+    errorElement: <ErrorView />,
+    children: [
+      {
+        path: "/",
+        element: <HomeView />,
+      },
+      {
+        path: "/products",
+        element: <ProductsView />,
+      },
+      {
+        path: "/products/:productId",
+        element: <ProductDetailView />,
+      },
+    ],
   },
 ]);
 
