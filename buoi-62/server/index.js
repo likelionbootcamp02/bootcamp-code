@@ -1,18 +1,21 @@
 // ES5
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const status = require("http-status");
 
 // Import routers
 const productRouter = require("./routes/product.route");
+const mongoConfig = require("./config/db");
 
 // Variables
 const PORT = 3000;
-const DB_URI =
-  "mongodb+srv://huynguyen:1111@cluster0.zkoekeb.mongodb.net/shopping?retryWrites=true&w=majority";
 
 // Create a server instance
 const app = express();
+
+// Middlewares
+app.use(express.json());
 
 // GET
 // ROUTE: /
@@ -26,7 +29,7 @@ app.use("/api/products", productRouter);
 
 // Run database & server
 mongoose
-  .connect(DB_URI)
+  .connect(mongoConfig.uri)
   .then(() => {
     console.log("Database connected!");
     app.listen(PORT, () => {
